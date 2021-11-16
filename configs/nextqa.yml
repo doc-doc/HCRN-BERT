@@ -1,0 +1,31 @@
+gpu_id: 4
+multi_gpus: False
+num_workers: 8
+seed: 666
+exp_name: 'nextqa16'
+
+train:
+  lr: 0.0001
+  batch_size: 64
+  restore: False
+  max_epochs: 50
+  word_dim: 300
+  module_dim: 512
+  glove: False
+  k_max_frame_level: 16
+  k_max_clip_level: 16
+  spl_resolution: 1
+
+val:
+  flag: True
+
+test:
+  test_num: 0
+  write_preds: True
+
+dataset:
+  name: 'nextqa'
+  question_type: 'transition'
+  data_dir: 'dataset/nextqa/'
+  feat_dir: '../data/feats/'
+  save_dir: 'results/'
